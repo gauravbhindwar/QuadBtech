@@ -1,0 +1,525 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.app-header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.app-header h1 {
+  font-size: 2.5rem;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.app-subtitle {
+  color: var(--gray-600);
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.user-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.user-card {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--background-light);
+  color: var(--text-dark);
+  border: 1px solid var(--gray-200);
+}
+
+.user-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--card-hover-shadow);
+}
+
+.user-card-image-container {
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+
+.user-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.user-card-image-fallback {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-gradient);
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.user-card:hover .user-card-image {
+  transform: scale(1.1);
+}
+
+.user-card-content {
+  padding: 1.75rem;
+}
+
+.user-card-name {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+.user-card-role {
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.user-card-about {
+  margin-bottom: 1.5rem;
+  color: var(--gray-600);
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.user-card-button {
+  background: var(--accent-gradient);
+  color: white;
+  border: none;
+  padding: 0.7em 1.2em;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.2), 0 2px 4px -1px rgba(99, 102, 241, 0.1);
+}
+
+.user-card-button:hover {
+  box-shadow: 0 6px 8px -1px rgba(99, 102, 241, 0.3), 0 4px 6px -1px rgba(99, 102, 241, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Profile Popup Styles */
+.profile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.profile-popup {
+  background-color: var(--background-light);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: scaleIn 0.3s ease;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--gray-200);
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(241, 245, 249, 0.8);
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--gray-600);
+  padding: 0;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s;
+  backdrop-filter: blur(8px);
+  z-index: 2;
+}
+
+.close-button:hover {
+  background-color: var(--gray-200);
+  color: var(--text-dark);
+}
+
+.profile-content {
+  padding: 2rem;
+  color: var(--text-dark);
+}
+
+.profile-header {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+}
+
+.profile-image-fallback {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-gradient);
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+}
+
+.profile-name {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.75rem;
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+.profile-role {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.profile-section {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.profile-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.profile-section h3 {
+  margin: 0 0 0.75rem 0;
+  color: var(--text-dark);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.profile-section h3::before {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 18px;
+  background: var(--accent-gradient);
+  border-radius: 2px;
+}
+
+.contact-label {
+  font-weight: 600;
+  margin-right: 0.5rem;
+  color: var(--gray-600);
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-badge {
+  background-color: var(--accent-light);
+  color: var(--primary-color);
+  padding: 0.4rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.skill-badge:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+.profile-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.profile-action-button {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.profile-action-button.primary {
+  background: var(--accent-gradient);
+  color: white;
+  box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.2), 0 2px 4px -1px rgba(99, 102, 241, 0.1);
+}
+
+.profile-action-button.primary:hover {
+  box-shadow: 0 6px 8px -1px rgba(99, 102, 241, 0.3), 0 4px 6px -1px rgba(99, 102, 241, 0.2);
+  transform: translateY(-2px);
+}
+
+.profile-action-button.secondary {
+  background-color: var(--gray-100);
+  color: var(--text-dark);
+}
+
+.profile-action-button.secondary:hover {
+  background-color: var(--gray-200);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .user-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .app-header h1 {
+    font-size: 2rem;
+  }
+  
+  .profile-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .profile-popup {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  #root {
+    padding: 1rem;
+  }
+  
+  .profile-content {
+    padding: 1.5rem;
+  }
+  
+  .profile-actions {
+    flex-direction: column;
+  }
+}
+
+/* Adding automatic dark mode detection */
+@media (prefers-color-scheme: dark) {
+  #root {
+    color-scheme: dark;
+  }
+  
+  .profile-popup {
+    background-color: var(--gray-800);
+    border-color: var(--gray-700);
+  }
+  
+  .profile-content {
+    color: var(--text-light);
+  }
+  
+  .profile-name {
+    color: var(--text-light);
+  }
+  
+  .profile-section h3 {
+    color: var(--text-light);
+  }
+  
+  .profile-section p {
+    color: var(--gray-300);
+  }
+  
+  .profile-action-button.secondary {
+    background-color: var(--gray-700);
+    color: var(--text-light);
+  }
+  
+  .profile-action-button.secondary:hover {
+    background-color: var(--gray-600);
+  }
+  
+  .skill-badge {
+    background-color: rgba(99, 102, 241, 0.2);
+    color: var(--primary-light);
+  }
+  
+  .skill-badge:hover {
+    background-color: rgba(99, 102, 241, 0.3);
+  }
+}
+
+/* Adding a class that can be toggled programmatically */
+.dark-mode {
+  color-scheme: dark;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+.dark-mode .user-card {
+  background-color: #1e293b;
+  color: var(--text-light);
+  border-color: var(--gray-700);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+}
+
+.dark-mode .user-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .user-card-name {
+  color: var(--text-light);
+}
+
+.dark-mode .user-card-about {
+  color: var(--gray-300);
+}
+
+.dark-mode .user-card-role {
+  color: var(--primary-light);
+  border-bottom-color: var(--gray-700);
+}
+
+.dark-mode .profile-popup {
+  background-color: var(--gray-800);
+  border-color: var(--gray-700);
+}
+
+.dark-mode .profile-content {
+  color: var(--text-light);
+}
+
+.dark-mode .profile-section {
+  border-bottom-color: var(--gray-700);
+}
+
+.dark-mode .profile-section p {
+  color: var(--gray-300);
+}
+
+.dark-mode .app-subtitle {
+  color: var(--gray-400);
+}
+
+.dark-mode .contact-label {
+  color: var(--gray-400);
+}

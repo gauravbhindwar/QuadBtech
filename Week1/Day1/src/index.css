@@ -1,0 +1,176 @@
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #242424;
+  background-color: #f5f7fa;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* Theme Colors - Updated Palette */
+  --primary-color: #6366f1;
+  --primary-hover: #4f46e5;
+  --primary-light: #e0e7ff;
+  --text-dark: #1e293b;
+  --text-light: #f8fafc;
+  --background-light: #ffffff;
+  --background-dark: #0f172a;
+  --background-gradient: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+  --accent-light: #dbeafe;
+  --accent-dark: #2563eb;
+  --accent-gradient: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
+  --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --card-hover-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+a {
+  font-weight: 500;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--background-gradient);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.2;
+}
+
+button {
+  border-radius: 6px;
+  border: none;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 600;
+  font-family: inherit;
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 3px solid rgba(79, 70, 229, 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: var(--text-light);
+    background-color: var(--background-dark);
+
+    /* Update variables for dark mode */
+    --background-light: #1e293b;
+    --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+    --card-hover-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    --gray-200: var(--gray-700);
+    --accent-light: rgba(99, 102, 241, 0.2);
+  }
+  
+  body {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  }
+  
+  .user-card {
+    background-color: #1e293b;
+    color: var(--text-light);
+    border-color: var(--gray-700);
+  }
+  
+  .user-card-name {
+    color: var(--text-light);
+  }
+  
+  .user-card-about {
+    color: var(--gray-300);
+  }
+  
+  .user-card-role {
+    color: var(--primary-light);
+    border-bottom-color: var(--gray-700);
+  }
+  
+  .profile-popup {
+    background-color: var(--gray-800);
+    border-color: var(--gray-700);
+  }
+  
+  .profile-name {
+    color: var(--text-light);
+  }
+  
+  .profile-section {
+    border-bottom-color: var(--gray-700);
+  }
+  
+  .profile-section h3 {
+    color: var(--text-light);
+  }
+  
+  .skill-badge {
+    background-color: var(--gray-700);
+    color: var(--primary-light);
+  }
+  
+  .profile-action-button.secondary {
+    background-color: var(--gray-700);
+    color: var(--text-light);
+  }
+  
+  .profile-action-button.secondary:hover {
+    background-color: var(--gray-600);
+  }
+  
+  .close-button {
+    color: var(--gray-300);
+    background: rgba(30, 41, 59, 0.7);
+  }
+  
+  .close-button:hover {
+    background-color: var(--gray-700);
+    color: var(--text-light);
+  }
+  
+  .app-subtitle {
+    color: var(--gray-400);
+  }
+  
+  .contact-label {
+    color: var(--gray-400);
+  }
+}
