@@ -1,0 +1,286 @@
+#root {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.todo-container {
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Form Styles */
+.todo-form {
+  margin-bottom: 20px;
+  background-color: #0d1117;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.form-row {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.form-row:last-child {
+  margin-bottom: 0;
+}
+
+.form-options {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #30363d;
+  border-radius: 4px 0 0 4px;
+  font-size: 16px;
+  background-color: #0d1117;
+  color: #c9d1d9;
+}
+
+.select-input, .date-input, .filter-select {
+  padding: 8px;
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  color: #c9d1d9;
+}
+
+.add-button {
+  border-radius: 0 4px 4px 0;
+  background-color: #2ea043;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+}
+
+.add-button:hover {
+  background-color: #3fb950;
+  border-color: #3fb950;
+}
+
+/* Filter Styles */
+.todo-filters {
+  background-color: #0d1117;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.filter-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.filter-group, .sort-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Todo List Styles */
+.todo-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  background-color: #0d1117;
+  border-radius: 4px;
+  border-left: 4px solid #58a6ff;
+  transition: all 0.3s ease;
+}
+
+.todo-item.priority-high {
+  border-left-color: #f85149;
+}
+
+.todo-item.priority-medium {
+  border-left-color: #f0883e;
+}
+
+.todo-item.priority-low {
+  border-left-color: #3fb950;
+}
+
+.todo-item.completed {
+  opacity: 0.7;
+  border-left-color: #2ea043;
+}
+
+.todo-item.overdue:not(.completed) {
+  border-left-color: #f85149;
+  background-color: rgba(248, 81, 73, 0.15);
+}
+
+.todo-content {
+  flex: 1;
+  overflow: hidden;
+}
+
+.todo-text {
+  display: block;
+  cursor: pointer;
+  margin-bottom: 4px;
+  word-break: break-word;
+}
+
+.completed .todo-text {
+  text-decoration: line-through;
+  color: #8b949e;
+}
+
+.todo-details {
+  display: flex;
+  gap: 12px;
+  font-size: 0.8em;
+  color: #8b949e;
+}
+
+.todo-category {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 10px;
+  background-color: #161b22;
+  text-transform: capitalize;
+}
+
+.todo-due-date {
+  padding: 2px 6px;
+  border-radius: 10px;
+  background-color: #161b22;
+}
+
+.overdue .todo-due-date {
+  color: #f85149;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.complete-button, .delete-button {
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.complete-button {
+  background-color: #1f6feb;
+  color: white;
+}
+
+.delete-button {
+  background-color: #da3633;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #f85149;
+  border-color: #f85149;
+}
+
+.clear-completed-button {
+  background-color: #21262d;
+  color: #c9d1d9;
+  margin-top: 10px;
+  padding: 8px 16px;
+  border: 1px solid #30363d;
+}
+
+.clear-completed-button:hover {
+  background-color: #30363d;
+}
+
+.empty-message {
+  text-align: center;
+  color: #8b949e;
+  font-style: italic;
+  padding: 20px;
+  background-color: #0d1117;
+  border-radius: 4px;
+}
+
+/* Stats Styles */
+.todo-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.stat-item {
+  background-color: #0d1117;
+  padding: 8px 16px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stat-label {
+  color: #8b949e;
+  font-size: 0.9em;
+}
+
+.stat-value {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.stat-item.urgent .stat-value,
+.stat-item.overdue .stat-value {
+  color: #f85149;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .form-options,
+  .filter-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .form-group,
+  .filter-group,
+  .sort-group {
+    justify-content: space-between;
+  }
+  
+  .todo-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .todo-actions {
+    margin-top: 10px;
+    justify-content: flex-end;
+  }
+}
