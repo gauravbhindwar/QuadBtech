@@ -15,6 +15,10 @@ This project is a feature-rich Todo List application built with React. It demons
 
 ## Screenshots
 
+![Todo](https://github.com/user-attachments/assets/dfe63724-854d-47ec-a3db-ad4945630f25)
+
+![Todo With Data](https://github.com/user-attachments/assets/725c34a9-13d1-4670-8d9f-b595ab5d4ed3)
+
 
 ## Technologies Used
 
