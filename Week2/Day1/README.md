@@ -1,12 +1,82 @@
-# React + Vite
+# Sports News Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive sports news website built with React and TailwindCSS, based on the [Sports News Website Figma design](https://www.figma.com/community/file/1269505328883040561/sports-news-websites).
 
-Currently, two official plugins are available:
+![Sports News Website Screenshot](./screenshot.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- Responsive design optimized for various screen sizes
+- Modern UI with clean aesthetics
+- Interactive components for better user engagement
+- Dynamic content sections including:
+  - Featured sports articles
+  - Category navigation
+  - Trending news section
+  - Latest sports news
+  - Sports articles with images
+  - Newsletter subscription
+  - Game schedules
+  - Footer with social links
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Technologies Used
+
+- React.js
+- TailwindCSS for styling
+- Vite as the build tool
+- Custom fonts (Sequel Sans)
+- Responsive design principles
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (version 14 or later)
+- npm or bun package manager
+
+### Installation
+
+1. Clone the repository
+```bash
+git clone <repository-url>
+cd <repository-directory>
+```
+
+2. Install dependencies
+```bash
+npm install
+# or
+bun install
+```
+
+3. Start the development server
+```bash
+npm run dev
+# or
+bun run dev
+```
+
+4. Open your browser and navigate to http://localhost:5173
+
+## Project Structure
+
+- `/public` - Static assets including fonts
+- `/src/assets` - Images and SVG files
+- `/src/components` - React components organized by section
+  - Category
+  - Footer
+  - Games
+  - HeroSection
+  - Navbar
+  - News
+  - NewsLetter
+  - SportsArticle
+  - TrendingNews
+
+## Design Implementation
+
+This project is an implementation of the [Sports News Website Figma design](https://www.figma.com/community/file/1269505328883040561/sports-news-websites) with careful attention to visual details, spacing, typography, and responsive behavior.
+
+## License
+
+[MIT](LICENSE)
