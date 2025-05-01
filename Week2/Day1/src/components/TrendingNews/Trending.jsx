@@ -120,7 +120,7 @@ const Trending = () => {
         <div className="absolute inset-0 bg-black opacity-60 rounded-md"></div>
         
         {/* Category tag */}
-        <div className="absolute left-[36px] top-[30px] border border-[#EBEEF3] rounded px-[26px] py-[29px] flex justify-center items-center">
+        <div className="absolute left-[36px] top-[30px] h-[36.09px] w-[107.7px] border border-[#EBEEF3] rounded flex justify-center items-center">
           <span className="font-dm-sans font-medium text-[20px] leading-[26px] text-[#EBEEF3] capitalize">
             Cycling
           </span>
@@ -131,7 +131,7 @@ const Trending = () => {
           <p className="font-dm-sans font-normal text-[18px] leading-[18px] text-white mb-[14px]">
             Debits - 03 June 2023
           </p>
-          <h3 className="font-sequel-sans font-normal text-[36px] leading-[42px] w-[509px] text-white capitalize">
+          <h3 className="font-sequel-sans font-extrabold text-[36px] leading-[42px] w-[509px] text-white capitalize tracking-tight">
             DISCOVER THE MEMBER BENEFITS OF USA CYCLING!
           </h3>
         </div>

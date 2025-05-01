@@ -41,7 +41,7 @@ const Category = () => {
         <div className="absolute left-[34px] top-0">
           {/* Football Title Box */}
           <div className="absolute w-[270px] h-[116px] bg-[#EBEEF3] rounded-[6px]">
-            <h2 className="absolute w-[203px] h-[75px] left-[34px] top-[20px] font-sequel-sans font-normal text-[37px] leading-[75px] text-center uppercase bg-gradient-to-b from-[#262626] to-[#B8C2CE] bg-clip-text text-transparent">
+            <h2 className="absolute w-[203px] h-[75px] left-[34px] top-[20px] font-sequel-sans font-extrabold text-[37px] leading-[75px] text-center uppercase bg-gradient-to-b from-[#262626] to-[#B8C2CE] bg-clip-text text-transparent">
               {categories[0].title}
             </h2>
           </div>
@@ -69,7 +69,7 @@ const Category = () => {
           
           {/* Basketball Title Box */}
           <div className="absolute w-[270px] h-[169px] top-[249px] bg-[#EBEEF3] rounded-[6px]">
-            <div className="absolute w-[210px] left-[30px] top-[45px] font-sequel-sans font-normal text-[37px] leading-[39px] text-center uppercase bg-gradient-to-b from-[#262626] to-[#B8C2CE] bg-clip-text text-transparent">
+            <div className="absolute w-[210px] left-[30px] top-[45px] font-sequel-sans font-extrabold text-[37px] leading-[39px] text-center uppercase bg-gradient-to-b from-[#262626] to-[#B8C2CE] bg-clip-text text-transparent">
               <div>BASKET</div>
               <div>BALL</div>
             </div>
@@ -80,7 +80,7 @@ const Category = () => {
         <div className="absolute left-[634px] top-0">
           {/* Car Sport Title Box */}
           <div className="absolute w-[270px] h-[116px] bg-[#EBEEF3] rounded-[6px]">
-            <h2 className="absolute w-[248px] h-[39px] left-[11px] top-[38px] font-sequel-sans font-normal text-[37px] leading-[39px] text-center uppercase bg-gradient-to-b from-[#262626] to-[#B8C2CE] bg-clip-text text-transparent">
+            <h2 className="absolute w-[248px] h-[39px] left-[11px] top-[38px] font-sequel-sans font-extrabold text-[37px] leading-[39px] text-center uppercase bg-gradient-to-b from-[#262626] to-[#B8C2CE] bg-clip-text text-transparent">
               {categories[2].title}
             </h2>
           </div>
@@ -98,17 +98,17 @@ const Category = () => {
         {/* Table Tennis Category */}
         <div className="absolute left-[934px] top-0">
           {/* Table Tennis Image */}
-          <div className="absolute w-[270px] h-[198px] top-[46px] overflow-hidden rounded-[6px] bg-[#010101]">
+          <div className="absolute w-[270px] h-[286px]  overflow-hidden rounded-[6px] bg-[#010101]">
             <img 
               src={categories[3].image} 
               alt="Table Tennis" 
-              className="w-full h-full object-cover"
+              className="w-[270px] h-[198px] object-cover"
             />
           </div>
           
           {/* Table Tennis Title Box */}
-          <div className="absolute w-[270px] h-[118px] top-[258px] bg-[#EBEEF3] rounded-[6px]">
-            <h2 className="absolute w-[210px] h-[78px] left-[30px] top-[20px] font-sequel-sans font-normal text-[37px] leading-[39px] text-center uppercase bg-gradient-to-b from-[#262626] to-[#B8C2CE] bg-clip-text text-transparent">
+          <div className="absolute w-[270px] h-[118px] top-[300px] bg-[#EBEEF3] rounded-[6px]">
+            <h2 className="absolute w-[210px] h-[78px] left-[30px] top-[20px] font-sequel-sans font-extrabold text-[37px] leading-[39px] text-center uppercase bg-gradient-to-b from-[#262626] to-[#B8C2CE] bg-clip-text text-transparent">
               {categories[3].title}
             </h2>
           </div>

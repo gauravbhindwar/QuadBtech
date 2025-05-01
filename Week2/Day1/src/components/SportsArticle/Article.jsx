@@ -48,7 +48,7 @@ const Article = () => {
 
   return (
     <div className="w-[1170px] mx-auto my-16">
-      <h2 className="text-[28px] font-normal mb-8 font-sequel text-[#262626]">
+      <h2 className="text-[28px] font-normal mb-8 font-sequel-sans text-[#262626]">
         Sports Article
       </h2>
 
@@ -63,7 +63,7 @@ const Article = () => {
                 className="w-full h-[248px] object-cover rounded-md"
               />
               <div className="absolute top-[14px] right-[14px] px-[10px] py-[6px] bg-transparent border border-[#EBEEF3] rounded-md">
-                <span className="text-[12px] text-[#EBEEF3] font-dmsans capitalize">
+                <span className="text-[12px] text-[#EBEEF3] font-dm-sans capitalize">
                   {article.category}
                 </span>
               </div>
@@ -76,7 +76,7 @@ const Article = () => {
                 alt={article.author}
                 className="w-[44px] h-[44px] rounded-[46px]"
               />
-              <div className="text-[14px] font-medium text-[#3E3232] font-roboto tracking-[0.1px]">
+              <div className="text-[14px] font-[600] text-[#3E3232] font-roboto tracking-[0.1px]">
                 {article.author}
               </div>
             </div>
@@ -87,12 +87,12 @@ const Article = () => {
             </div>
 
             {/* Title */}
-            <h3 className="text-[22px] font-normal leading-[29px] text-[#262626] mb-3 font-sequel">
+            <h3 className="text-[22px] font-medium leading-[29px] text-[#262626] mb-3 font-sequel-sans">
               {article.title}
             </h3>
 
             {/* Description */}
-            <p className="text-[16px] font-medium text-[#696868] leading-[123.9%] font-dmsans">
+            <p className="text-[16px] font-medium text-[#696868] leading-[123.9%] font-dm-sans">
               {article.description}
             </p>
           </div>
@@ -100,7 +100,7 @@ const Article = () => {
       </div>
 
       {/* Navigation Buttons */}
-      <div className="flex mt-10 gap-3">
+      <div className="flex mt-10 gap-5">
         <button className="w-[60px] h-[40px] bg-[#BAB8B8] rounded flex items-center justify-center">
           <BsArrowLeft className="text-[#EBEEF3] text-lg" />
         </button>

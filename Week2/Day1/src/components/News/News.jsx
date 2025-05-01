@@ -127,7 +127,7 @@ const News = () => {
           <div className="relative w-[270px] h-[300px] rounded-[6px] overflow-hidden mr-[30px] float-left">
             <div className="relative w-full h-full">
               <img src={karateFighter} alt="Karate Fighter" className="w-full h-full object-cover rounded-[6px]" />
-              <div className="absolute bottom-0 left-0 w-full h-[82px] bg-gradient-to-tr from-[rgba(255,255,255,0.24)] to-[rgba(255,255,255,0.06)] backdrop-blur-[50px] rounded-b-[6px] p-4 box-border">
+              <div className="absolute bottom-0 left-0 w-[270px] h-[82px] bg-gradient-to-tr from-[rgba(255,255,255,0.24)] to-[rgba(255,255,255,0.06)] backdrop-blur-[50px] rounded-b-[6px] p-2 pl-4 box-border">
                 <span className="font-['DM_Sans'] font-medium text-[10px] leading-[100.9%] text-[#EBEEF3]">Day 5 Highlights</span>
                 <h3 className="font-['Sequel_Sans'] font-normal text-[16px] leading-[123.9%] text-[#EBEEF3] mt-1">Baku 2023 World Taekwondo Championships</h3>
               </div>
@@ -160,24 +160,21 @@ const News = () => {
         <div className="w-[570px]">
           <h2 className="font-['Sequel_Sans'] font-normal text-[28px] leading-[38px] text-[#262626] mb-6">Clubs Ranking</h2>
           
-          <div className="w-full h-[354px] bg-[#EBEEF3] rounded-[6px] overflow-hidden">
-            <div className="flex justify-between px-[15px] py-5 border-b border-[#B8C2CE] border-opacity-50">
-              <div className="w-[200px] flex items-center font-['Sequel_Sans'] font-normal text-[16px] leading-[19px] capitalize text-[#262626]">Club</div>
+          <div className="w-[570px] bg-[#EBEEF3] rounded-[6px] overflow-hidden">
+           <div className='w-[570px]'>
+           <div className="flex justify-between px-[15px] py-5 border-b border-[#B8C2CE] border-opacity-50">
+              <div className="w-[200px] flex items-center font-['Sequel_Sans'] font-bold text-[16px] leading-[19px] capitalize text-[#262626]">Club</div>
               <div className="flex gap-6 items-center">
-                <span className="w-6 text-center font-['Sequel_Sans'] font-normal text-[16px] leading-[19px] capitalize text-[#262626]">GP</span>
-                <span className="w-6 text-center font-['Sequel_Sans'] font-normal text-[16px] leading-[19px] capitalize text-[#262626]">W</span>
-                <span className="w-6 text-center font-['Sequel_Sans'] font-normal text-[16px] leading-[19px] capitalize text-[#262626]">D</span>
-                <span className="w-6 text-center font-['Sequel_Sans'] font-normal text-[16px] leading-[19px] capitalize text-[#262626]">L</span>
-                <span className="w-6 text-center font-['Sequel_Sans'] font-normal text-[16px] leading-[19px] capitalize text-[#262626]">F</span>
-                <span className="w-6 text-center font-['Sequel_Sans'] font-normal text-[16px] leading-[19px] capitalize text-[#262626]">A</span>
-                <span className="w-6 text-center font-['Sequel_Sans'] font-normal text-[16px] leading-[19px] capitalize text-[#262626]">GD</span>
+                {['GP', 'W', 'D', 'L', 'F', 'A', 'GD'].map((label) => (
+                  <span key={label} className="w-6 text-center font-['Sequel_Sans'] font-bold text-[16px] leading-[19px] capitalize text-[#262626]">{label}</span>
+                ))}
               </div>
             </div>
             
             <div>
               {clubsRankingData.map((club, index) => (
                 <div 
-                  className={`flex justify-between px-[15px] py-[10px] border-b border-[#B8C2CE] border-opacity-50 ${index % 2 === 1 ? 'bg-[#EBEEF3]' : ''}`} 
+                  className={`flex justify-between px-[15px] py-[10px] ${index !== clubsRankingData.length - 1 ? 'border-b border-[#B8C2CE] border-opacity-50' : ''} ${index % 2 === 1 ? 'bg-[#EBEEF3]' : ''}`} 
                   key={index}
                 >
                   <div className="flex items-center w-[200px]">
@@ -188,17 +185,14 @@ const News = () => {
                     <span className="font-['Sequel_Sans'] font-normal text-[13px] leading-[15px] capitalize text-[#262626]">{club.name}</span>
                   </div>
                   <div className="flex gap-6">
-                    <span className="w-6 text-center font-['Sequel_Sans'] font-normal text-[16px] leading-[19px] text-[#262626]">{club.stats.gp}</span>
-                    <span className="w-6 text-center font-['Sequel_Sans'] font-normal text-[16px] leading-[19px] text-[#262626]">{club.stats.w}</span>
-                    <span className="w-6 text-center font-['Sequel_Sans'] font-normal text-[16px] leading-[19px] text-[#262626]">{club.stats.d}</span>
-                    <span className="w-6 text-center font-['Sequel_Sans'] font-normal text-[16px] leading-[19px] text-[#262626]">{club.stats.l}</span>
-                    <span className="w-6 text-center font-['Sequel_Sans'] font-normal text-[16px] leading-[19px] text-[#262626]">{club.stats.f}</span>
-                    <span className="w-6 text-center font-['Sequel_Sans'] font-normal text-[16px] leading-[19px] text-[#262626]">{club.stats.a}</span>
-                    <span className="w-6 text-center font-['Sequel_Sans'] font-normal text-[16px] leading-[19px] text-[#262626]">{club.stats.gd}</span>
+                    {['gp', 'w', 'd', 'l', 'f', 'a', 'gd'].map(stat => (
+                      <span className="w-6 text-center font-['Sequel_Sans'] font-normal text-[16px] leading-[19px] text-[#262626]" key={stat}>{club.stats[stat]}</span>
+                    ))}
                   </div>
                 </div>
               ))}
             </div>
+           </div>
           </div>
         </div>
       </div>

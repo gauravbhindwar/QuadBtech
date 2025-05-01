@@ -89,9 +89,9 @@ const Games = () => {
       </div>
 
       {/* Category label */}
-      <div className="absolute flex flex-col justify-center items-center w-28 h-9 left-12 top-8 border border-gray-100 rounded p-7">
+      <div className="absolute flex flex-col justify-center items-center w-[125px] h-[36.09px] left-12 top-8 border border-gray-100 rounded">
         {/* Category text */}
-        <span className="w-[76px] h-[26px] font-dm-sans font-medium text-xl leading-[26px] capitalize text-gray-100">
+        <span className="w-[107.6px] h-[36.09px] font-dm-sans font-medium mt-1 text-xl leading-[26px] capitalize text-gray-100">
           {currentNews.category}
         </span>
       </div>
@@ -102,7 +102,7 @@ const Games = () => {
       </div>
 
       {/* Title */}
-      <h2 className="absolute w-[760px] h-28 left-12 top-[313px] font-sequel-sans font-normal text-4xl leading-[43px] uppercase text-gray-50">
+      <h2 className="absolute w-[760px] h-28 left-12 top-[313px] font-sequel-sans font-extrabold text-4xl leading-[43px] uppercase text-gray-50">
         {currentNews.title}
       </h2>
 

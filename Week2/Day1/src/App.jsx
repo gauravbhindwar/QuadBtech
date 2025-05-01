@@ -13,14 +13,35 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="app-container">
-        <Hero />
-        <Category/>
-        <Trending />
-        <Games />
-        <News/>
-        <Article/>
-        <NewsLetter/>
+      <div className="app-container pt-[92px]">
+        <section id="home">
+          <Hero />
+        </section>
+        
+        <section id="category">
+          <Category/>
+        </section>
+        
+        <section id="trending">
+          <Trending />
+        </section>
+        
+        <section id="games">
+          <Games />
+        </section>
+        
+        <section id="recent">
+          <News/>
+        </section>
+        
+        <section id="sports">
+          <Article/>
+        </section>
+        
+        <section id="newsletter">
+          <NewsLetter/>
+        </section>
+        
         <Footer/>
       </div>
     </>

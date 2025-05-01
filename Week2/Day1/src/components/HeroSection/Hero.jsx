@@ -24,40 +24,40 @@ const Hero = () => {
   ]
 
   return (
-    <section className="relative w-[1400px] h-[750px] mt-[10px] overflow-hidden">
-        <div className="bg-gray-100">
-            
+    <section className="relative w-full h-[750px] mt-[-55px] overflow-hidden">
+
+    <div className="bg-gray-100">
       {/* Basketball icon background - positioned behind everything */}
       <div 
-          className="absolute w-[716px] h-[513px] top-[100px] grayscale mix-blend-luminosity"
+          className="absolute w-[716px] h-[513px] top-[100px] left-25 grayscale mix-blend-luminosity"
           style={{ backgroundImage: `url(${basketballIcon})` }}
       />
       
       {/* Heading text */}
-      <h1 className="absolute w-[470px] h-auto min-h-[300px] left-[135px] top-[204px] font-sequel-sans font-bold text-[75px] leading-[85px] uppercase bg-gradient-to-b from-gray-900 to-gray-400 bg-clip-text text-transparent z-10">
+      <h1 className="absolute w-[470px] h-auto min-h-[300px] top-[190px] font-sequel-sans font-bold text-[75px] leading-[85px] uppercase bg-gradient-to-b from-gray-900 to-gray-400 bg-clip-text text-transparent z-10 left-55 ">
           Top scorer to the final match
       </h1>
       
       {/* Basketball player image */}
       <div 
-          className="absolute w-[720px] h-[580px] left-[334px] top-[99px] bg-cover bg-center z-20"
+          className="absolute w-[720px] h-[580px] left-[435px] top-[99px] bg-cover bg-center z-20 "
           style={{ backgroundImage: `url(${basketballPlayer})` }}
       />
       
       {/* Description text */}
-      <p className="absolute w-[364px] left-[556px] top-[562px] font-dm-sans text-lg leading-[25px] text-gray-900 z-20">
+      <p className="absolute w-[364px] left-[595px] top-[562px] font-dm-sans text-lg leading-[25px] text-gray-900 z-20">
           The EuroLeague Finals Top Scorer is the individual award for the player that gained the highest points in the EuroLeague Finals
       </p>
       
       {/* Continue reading button */}
-      <button className="absolute flex items-center justify-center py-3 px-8 w-[285px] left-[555px] top-[661px] bg-gray-900 rounded-md border-none cursor-pointer z-20">
+      <button className="absolute flex items-center justify-center py-3 px-8 w-[285px] left-[590px] top-[661px] bg-gray-900 rounded-md border-none cursor-pointer z-20">
           <span className="font-sequel-sans font-bold text-sm tracking-wider uppercase text-gray-100">
               CONTINUE READING
           </span>
       </button>
       
       {/* Right section with news cards */}
-      <div className="absolute w-[270px] right-[1px] top-[131px] z-20">
+      <div className="absolute w-[270px] right-[175px] top-[131px] z-20">
           {/* Today label */}
           <div className="absolute flex justify-center items-center px-4 py-1 w-[89px] h-[34px] left-0 top-0 bg-gray-100 rounded">
               <span className="font-dm-sans font-medium text-xl capitalize text-gray-400">

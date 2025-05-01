@@ -1,4 +1,6 @@
 import React from 'react'
+import { BsArrowRight } from 'react-icons/bs'
+'react'
 
 const NewsLetter = () => {
   return (
@@ -8,7 +10,7 @@ const NewsLetter = () => {
         
         {/* Newsletter Title */}
         <div className="absolute left-[68px] top-[84px]">
-          <h2 className="font-['Sequel_Sans'] font-normal text-[60px] leading-[60px] tracking-[0.01em] uppercase w-[614px]"
+          <h2 className="font-sequel-sans font-extrabold text-[65px] leading-[60px] tracking-[0.01em] uppercase w-[614px]"
               style={{
                 background: 'linear-gradient(180deg, #262626 0%, #B8C2CE 100%)',
                 WebkitBackgroundClip: 'text',
@@ -24,11 +26,11 @@ const NewsLetter = () => {
           <div className="relative w-[514px] h-[58px]">
             <input 
               type="email" 
-              placeholder="shovon.khan0099@gmail.com"
-              className="w-full h-full border border-[#262626] rounded-md pl-4 text-[21px] font-['DM_Sans'] font-normal text-[rgba(38,38,38,0.37)]"
+              placeholder="gaurav.12bhindwar@gmail.com"
+              className="w-full h-full border border-[#262626] rounded-md pl-4 text-[21px] font-dm-sans font-normal text-[rgba(38,38,38,0.37)]"
             />
             <button className="absolute right-0 top-0 w-[74px] h-[58px] bg-[#262626] rounded-r-md flex items-center justify-center">
-              <div className="w-[24px] h-0 border-t-2 border-[#EBEEF3] transform rotate-[-45deg] translate-x-[-4px]"></div>
+            <BsArrowRight className="text-[#EBEEF3] text-4xl transform rotate-[-45deg] translate-x-[-4px]" /> 
             </button>
           </div>
         </div>
