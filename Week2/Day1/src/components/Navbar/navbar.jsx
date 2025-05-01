@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { FaSearch } from 'react-icons/fa';
+import logo from "/src/assets/images/navbar/SportNews.svg"
 
 const Navbar = () => {
   const [selectedItem, setSelectedItem] = useState(1); // Default to Home
@@ -71,7 +72,7 @@ const Navbar = () => {
             scrollToSection('home');
             setSelectedItem(1);
           }}>
-            <img src="/src/assets/images/navbar/SportNews.svg" alt="SPORTS NEWS" className="h-12" />
+            <img src={logo} alt="SPORTS NEWS" className="h-12" />
           </a>
         </div>
 
