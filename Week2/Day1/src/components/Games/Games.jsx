@@ -4,6 +4,7 @@ import footballImage from '../../assets/images/games/two-opposing-players-give-h
 import basketballImage from '../../assets/images/category/close-up-basketball-outdoors 1.png';
 import soccerImage from '../../assets/images/category/soccer-ball-green-grass-soccer-field-generative-ai 1.png';
 import racingImage from '../../assets/images/category/sport-car-is-drifting-track-with-smoke-around-it 1.png';
+import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 
 const Games = () => {
   // State to track the current slide index
@@ -111,23 +112,17 @@ const Games = () => {
       </p>
 
       {/* Navigation controls */}
-      <div className="absolute w-[470px] h-[60px] left-[673px] top-[538px]">
+      <div className="absolute flex w-[470px] h-[60px] left-[673px] top-[550px]">
         {/* Left button */}
-        <button 
-          onClick={prevSlide}
-          className="absolute w-[70px] h-[50px] left-0 top-[5px] bg-gray-400 rounded border-none cursor-pointer"
-        >
-          {/* Arrow left */}
-          <div className="box-border absolute w-6 h-0 left-[23px] top-[25px] border-t-2 border-gray-100 rotate-180"></div>
-          <div className="absolute left-[23px] top-[19px] w-2.5 h-2.5 border-l-2 border-b-2 border-gray-100 rotate-45"></div>
+        <button onClick={prevSlide} className="w-[60px] h-[40px] bg-[#BAB8B8] rounded flex items-center justify-center">
+          <BsArrowLeft className="text-[#EBEEF3] text-lg" />
         </button>
-
         {/* Page numbers */}
         {[1, 2, 3, 4].map((num, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`absolute w-9 h-9 top-[13px] rounded-full border-none cursor-pointer flex justify-center items-center
+            className={`absolute w-9 h-9 top-[5px] rounded-full border-none cursor-pointer flex justify-center items-center
               ${index === 0 ? 'left-[113px]' : ''}
               ${index === 1 ? 'left-[183px]' : ''}
               ${index === 2 ? 'left-[253px]' : ''}
@@ -140,15 +135,9 @@ const Games = () => {
             </span>
           </button>
         ))}
-
         {/* Right button */}
-        <button 
-          onClick={nextSlide}
-          className="absolute w-[70px] h-[50px] right-0 top-[5px] bg-gray-900 rounded border-none cursor-pointer"
-        >
-          {/* Arrow right */}
-          <div className="box-border absolute w-6 h-0 left-6 top-[25px] border-t-2 border-gray-100"></div>
-          <div className="absolute left-[38px] top-[19px] w-2.5 h-2.5 border-r-2 border-t-2 border-gray-100 rotate-45"></div>
+       <button onClick={nextSlide} className="w-[60px] h-[40px] bg-[#262626] rounded flex items-center justify-center ml-auto">
+          <BsArrowRight className="text-[#EBEEF3] text-lg" />
         </button>
       </div>
     </section>

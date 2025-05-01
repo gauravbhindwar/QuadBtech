@@ -9,6 +9,7 @@ import chelseaLogo from '../../assets/images/news/clubs/chelsea.png'
 import tottenhamLogo from '../../assets/images/news/clubs/tottenham.png'
 import arsenalLogo from '../../assets/images/news/clubs/arsenal.png'
 import manchesterUnitedLogo from '../../assets/images/news/clubs/manchester_united.png'
+import arrowIcon from '../../assets/Arrow4.svg'
 
 const News = () => {
   const clubsRankingData = [
@@ -148,9 +149,9 @@ const News = () => {
           </div>
           
           <div className="flex justify-center mt-[15px]">
-            <button className="flex flex-row justify-center items-center py-[6px] px-[7px] pr-[12px] gap-1 w-[80px] h-[28px] bg-[#B8C2CE] rounded-[3px] font-['DM_Sans'] font-medium text-[14px] leading-[42px] text-white border-none cursor-pointer">
+            <button className="flex items-center justify-center gap-1 py-[6px] px-[12px] w-[80px] h-[28px] bg-[#B8C2CE] rounded-[3px] font-['DM_Sans'] font-medium text-[14px] leading-[16px] text-white border-none cursor-pointer">
               More
-              <span className="w-[10px] h-0 border-t border-white">→</span>
+              <img src={arrowIcon} alt="arrow" className="w-[12px] h-[8px]" />
             </button>
           </div>
         </div>
