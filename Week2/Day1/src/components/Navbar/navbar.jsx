@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { FaSearch } from 'react-icons/fa';
-import logo from "/src/assets/images/navbar/SportNews.svg"
+import logo from "../../assets/images/navbar/SportNews.svg"
 
 const Navbar = () => {
   const [selectedItem, setSelectedItem] = useState(1); // Default to Home
