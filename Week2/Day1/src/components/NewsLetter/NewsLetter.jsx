@@ -1,6 +1,7 @@
 import React from 'react'
 import { BsArrowRight } from 'react-icons/bs'
-'react'
+import spiralImg from '../../assets/images/newsletter/spiral.svg'
+import playerImg from '../../assets/images/newsletter/image.png'
 
 const NewsLetter = () => {
   return (
@@ -39,7 +40,7 @@ const NewsLetter = () => {
          {/* Spiral SVG background */}
          <div className=" absolute right-48 top-0 w-[312px] h-[248px]">
           <img 
-            src="/src/assets/images/newsletter/spiral.svg" 
+            src={spiralImg} 
             alt="Decorative spiral" 
             className="w-full h-full object-contain"
           />
@@ -48,7 +49,7 @@ const NewsLetter = () => {
          {/*player image - right side */}
          <div className="z-[1] absolute right-0 top-0 w-[520px] h-[385px] overflow-hidden rounded-r-md">
           <img 
-            src="/src/assets/images/newsletter/image.png" 
+            src={playerImg} 
             alt="American football player" 
             className="w-full h-full object-cover"
           />
