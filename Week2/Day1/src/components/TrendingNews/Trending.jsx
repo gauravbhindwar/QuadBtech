@@ -35,105 +35,70 @@ const Trending = () => {
   ]
 
   return (
-    <section className="relative w-[1170px] h-[609px] mx-auto my-8">
+    <section className="relative w-full max-w-[1170px] mx-auto my-8 px-4 sm:px-6 lg:px-0">
       {/* Main container - background */}
-      <div className="absolute w-full h-full bg-[#EBEEF3] rounded-md"></div>
-      
-      {/* Section Title */}
-      <h2 className="absolute left-[36px] top-[29px] font-sequel-sans font-normal text-[28px] leading-[38px] text-[#262626]">
-        Trending News
-      </h2>
-      
-      {/* Left Section - Trending News Posts */}
-      <div className="absolute left-[36px] top-[83px] w-[499px]">
-        {/* Post 1 */}
-        <div className="relative w-[499px] h-[150px] mb-5">
-          <img 
-            src={raceHorseImage}
-            alt="Race Horse" 
-            className="absolute w-[234px] h-[150px] left-0 top-0 object-cover rounded-md"
-          />
-          <div className="absolute left-[254px] top-[14px]">
-            <p className="font-dm-sans font-medium text-[10px] leading-[10px] text-[#262626] opacity-60">
-              {trendingNews[0].category} - {trendingNews[0].date}
-            </p>
-            <h3 className="font-sequel-sans font-normal text-[18px] leading-[25px] w-[245px] mt-1 text-[#262626]">
-              {trendingNews[0].title}
-            </h3>
-            <p className="font-dm-sans font-normal text-[12px] leading-[15px] w-[239px] mt-3 text-[#696868]">
-              {trendingNews[0].description}
-            </p>
+      <div className="relative bg-[#EBEEF3] rounded-md p-6 lg:p-8 lg:pl-10">
+        
+        {/* Section Title */}
+        <h2 className="font-sequel-sans font-normal text-2xl sm:text-[28px] leading-tight sm:leading-[38px] text-[#262626] mb-6">
+          Trending News
+        </h2>
+        
+        {/* Main layout container - preserve original on large screens */}
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-10">
+          {/* Left Section - Trending News Posts */}
+          <div className="w-full lg:w-[429px] space-y-5">
+            {trendingNews.map((news) => (
+              <div key={news.id} className="flex flex-col sm:flex-row gap-4">
+                <img 
+                  src={news.image}
+                  alt={news.title} 
+                  className="w-full sm:w-[150px] lg:w-[234px] h-[110px] sm:h-[120px] lg:h-[150px] object-cover rounded-md"
+                />
+                <div className="mt-2 sm:mt-0 sm:max-w-[calc(100%-150px-1rem)] lg:max-w-[calc(429px-234px-1rem)]">
+                  <p className="font-dm-sans font-medium text-[10px] leading-[10px] text-[#262626] opacity-60">
+                    {news.category} - {news.date}
+                  </p>
+                  <h3 className="font-sequel-sans font-normal text-[14px] sm:text-[16px] lg:text-[18px] leading-tight lg:leading-[25px] mt-1 text-[#262626]">
+                    {news.title}
+                  </h3>
+                  <p className="font-dm-sans font-normal text-[10px] sm:text-[11px] lg:text-[12px] leading-[15px] mt-2 text-[#696868] line-clamp-2 lg:line-clamp-3">
+                    {news.description}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
-        </div>
-        
-        {/* Post 2 */}
-        <div className="relative w-[499px] h-[150px] mb-5">
-          <img 
-            src={cyclingImage}
-            alt="Cycling" 
-            className="absolute w-[234px] h-[150px] left-0 top-0 object-cover rounded-md"
-          />
-          <div className="absolute left-[254px] top-[14px]">
-            <p className="font-dm-sans font-medium text-[10px] leading-[10px] text-[#262626] opacity-60">
-              {trendingNews[1].category} - {trendingNews[1].date}
-            </p>
-            <h3 className="font-sequel-sans font-normal text-[18px] leading-[25px] w-[245px] mt-1 text-[#262626] capitalize">
-              {trendingNews[1].title}
-            </h3>
-            <p className="font-dm-sans font-normal text-[12px] leading-[15px] w-[239px] mt-3 text-[#696868]">
-              {trendingNews[1].description}
-            </p>
+          
+          {/* Right Section - Featured Cycling Post */}
+          <div className="w-full lg:w-[670px] h-[300px] sm:h-[350px] lg:h-[500px] relative mt-6 lg:mt-0">
+            {/* Background Image */}
+            <img 
+              src={cyclistDrinkingImage} 
+              alt="Cyclist drinking water" 
+              className="absolute w-full h-full object-cover rounded-md"
+            />
+            
+            {/* Dark overlay */}
+            <div className="absolute inset-0 bg-black opacity-60 rounded-md"></div>
+            
+            {/* Category tag */}
+            <div className="absolute left-4 sm:left-6 lg:left-[36px] top-4 lg:top-[30px] h-[30px] lg:h-[36px] px-3 lg:px-4 border border-[#EBEEF3] rounded flex justify-center items-center">
+              <span className="font-dm-sans font-medium text-sm sm:text-base lg:text-[20px] leading-tight lg:leading-[26px] text-[#EBEEF3] capitalize">
+                Cycling
+              </span>
+            </div>
+            
+            {/* Bottom content */}
+            <div className="absolute left-4 sm:left-6 lg:left-[36px] bottom-4 lg:bottom-[36px] p-2 lg:p-0">
+              <p className="font-dm-sans font-normal text-xs sm:text-sm lg:text-[18px] leading-tight lg:leading-[18px] text-white mb-2 lg:mb-[14px]">
+                Debits - 03 June 2023
+              </p>
+              <h3 className="font-sequel-sans font-extrabold text-lg sm:text-xl md:text-2xl lg:text-[36px] leading-tight lg:leading-[42px] text-white capitalize tracking-tight">
+                DISCOVER THE MEMBER BENEFITS OF USA CYCLING!
+              </h3>
+            </div>
           </div>
-        </div>
-        
-        {/* Post 3 */}
-        <div className="relative w-[499px] h-[150px]">
-          <img 
-            src={boxingImage}
-            alt="Boxing" 
-            className="absolute w-[234px] h-[150px] left-0 top-0 object-cover rounded-md"
-          />
-          <div className="absolute left-[254px] top-[14px]">
-            <p className="font-dm-sans font-medium text-[10px] leading-[10px] text-[#262626] opacity-60">
-              {trendingNews[2].category} - {trendingNews[2].date}
-            </p>
-            <h3 className="font-sequel-sans font-normal text-[18px] leading-[25px] w-[245px] mt-1 text-[#262626]">
-              {trendingNews[2].title}
-            </h3>
-            <p className="font-dm-sans font-normal text-[12px] leading-[15px] w-[239px] mt-3 text-[#696868]">
-              {trendingNews[2].description}
-            </p>
-          </div>
-        </div>
-      </div>
-      
-      {/* Right Section - Featured Cycling Post */}
-      <div className="absolute w-[570px] h-[609px] right-0 top-0">
-        {/* Background Image */}
-        <img 
-          src={cyclistDrinkingImage} 
-          alt="Cyclist drinking water" 
-          className="absolute w-full h-full object-cover rounded-md"
-        />
-        
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black opacity-60 rounded-md"></div>
-        
-        {/* Category tag */}
-        <div className="absolute left-[36px] top-[30px] h-[36.09px] w-[107.7px] border border-[#EBEEF3] rounded flex justify-center items-center">
-          <span className="font-dm-sans font-medium text-[20px] leading-[26px] text-[#EBEEF3] capitalize">
-            Cycling
-          </span>
-        </div>
-        
-        {/* Bottom content */}
-        <div className="absolute left-[36px] bottom-[36px]">
-          <p className="font-dm-sans font-normal text-[18px] leading-[18px] text-white mb-[14px]">
-            Debits - 03 June 2023
-          </p>
-          <h3 className="font-sequel-sans font-extrabold text-[36px] leading-[42px] w-[509px] text-white capitalize tracking-tight">
-            DISCOVER THE MEMBER BENEFITS OF USA CYCLING!
-          </h3>
         </div>
       </div>
     </section>

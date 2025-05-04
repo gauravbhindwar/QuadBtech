@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="app-container pt-[92px]">
+      <div className="app-container pt-[80px]">
         <section id="home">
           <Hero />
         </section>

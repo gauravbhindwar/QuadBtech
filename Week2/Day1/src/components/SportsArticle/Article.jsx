@@ -47,20 +47,20 @@ const Article = () => {
   ];
 
   return (
-    <div className="w-[1170px] mx-auto my-16">
-      <h2 className="text-[28px] font-normal mb-8 font-sequel-sans text-[#262626]">
+    <div className="w-full max-w-[1170px] px-4 sm:px-6 mx-auto my-8 md:my-16">
+      <h2 className="text-[22px] md:text-[28px] font-normal mb-6 md:mb-8 font-sequel-sans text-[#262626]">
         Sports Article
       </h2>
 
-      <div className="flex gap-8">
+      <div className="flex flex-col md:flex-row flex-wrap gap-6 md:gap-8">
         {articles.map((article) => (
-          <div key={article.id} className="w-[370px] relative">
+          <div key={article.id} className="w-full sm:w-[calc(50%-12px)] md:w-[calc(33.33%-22px)] relative">
             {/* Article Image */}
-            <div className="relative mb-6">
+            <div className="relative mb-4 md:mb-6">
               <img
                 src={article.image}
                 alt={article.category}
-                className="w-full h-[248px] object-cover rounded-md"
+                className="w-full h-[200px] sm:h-[220px] md:h-[248px] object-cover rounded-md"
               />
               <div className="absolute top-[14px] right-[14px] px-[10px] py-[6px] bg-transparent border border-[#EBEEF3] rounded-md">
                 <span className="text-[12px] text-[#EBEEF3] font-dm-sans capitalize">
@@ -70,11 +70,11 @@ const Article = () => {
             </div>
 
             {/* Author */}
-            <div className="flex items-center gap-4 mb-5">
+            <div className="flex items-center gap-4 mb-3 md:mb-5">
               <img
                 src={article.authorImg}
                 alt={article.author}
-                className="w-[44px] h-[44px] rounded-[46px]"
+                className="w-[40px] h-[40px] md:w-[44px] md:h-[44px] rounded-[46px]"
               />
               <div className="text-[14px] font-[600] text-[#3E3232] font-roboto tracking-[0.1px]">
                 {article.author}
@@ -82,17 +82,17 @@ const Article = () => {
             </div>
 
             {/* Date */}
-            <div className="text-[14px] font-medium text-[rgba(38,38,38,0.6)] mb-4 font-dmsans">
+            <div className="text-[13px] md:text-[14px] font-medium text-[rgba(38,38,38,0.6)] mb-3 md:mb-4 font-dmsans">
               {article.date}
             </div>
 
             {/* Title */}
-            <h3 className="text-[22px] font-medium leading-[29px] text-[#262626] mb-3 font-sequel-sans">
+            <h3 className="text-[18px] md:text-[22px] font-medium leading-[26px] md:leading-[29px] text-[#262626] mb-2 md:mb-3 font-sequel-sans">
               {article.title}
             </h3>
 
             {/* Description */}
-            <p className="text-[16px] font-medium text-[#696868] leading-[123.9%] font-dm-sans">
+            <p className="text-[14px] md:text-[16px] font-medium text-[#696868] leading-[123.9%] font-dm-sans">
               {article.description}
             </p>
           </div>
@@ -100,12 +100,12 @@ const Article = () => {
       </div>
 
       {/* Navigation Buttons */}
-      <div className="flex mt-10 gap-5">
-        <button className="w-[60px] h-[40px] bg-[#BAB8B8] rounded flex items-center justify-center">
-          <BsArrowLeft className="text-[#EBEEF3] text-lg" />
+      <div className="flex justify-center md:justify-start mt-8 md:mt-10 gap-5">
+        <button className="w-[50px] h-[36px] md:w-[60px] md:h-[40px] bg-[#BAB8B8] rounded flex items-center justify-center">
+          <BsArrowLeft className="text-[#EBEEF3] text-base md:text-lg" />
         </button>
-        <button className="w-[60px] h-[40px] bg-[#262626] rounded flex items-center justify-center">
-          <BsArrowRight className="text-[#EBEEF3] text-lg" />
+        <button className="w-[50px] h-[36px] md:w-[60px] md:h-[40px] bg-[#262626] rounded flex items-center justify-center">
+          <BsArrowRight className="text-[#EBEEF3] text-base md:text-lg" />
         </button>
       </div>
     </div>

@@ -11,108 +11,90 @@ const Category = () => {
       id: 1,
       title: "FOOTBALL",
       image: footballImage,
+      layout: "title-top" // Layout variant
     },
     {
       id: 2,
       title: "BASKETBALL",
       image: basketballImage,
+      layout: "title-bottom" // Layout variant
     },
     {
       id: 3,
       title: "CAR SPORT",
       image: carSportImage,
+      layout: "title-top" // Layout variant
     },
     {
       id: 4,
       title: "TABLE TENNIS",
       image: tableTennisImage,
+      layout: "title-bottom" // Layout variant
     }
   ];
 
+  // Split the word for BASKETBALL on mobile
+  const formatTitle = (title) => {
+    if (title === "BASKETBALL") {
+      return (
+        <>
+          <div>BASKET</div>
+          <div>BALL</div>
+        </>
+      );
+    }
+    return title;
+  };
+
   return (
-    <section className="relative w-[1170px] h-[488px] mx-auto my-20">
+    <section id="category" className="w-full px-4 sm:px-6 md:px-8 max-w-[1200px] mx-auto my-10 sm:my-16 md:my-20">
       {/* Category Heading */}
-      <h2 className="text-[28px] leading-[38px] font-sequel-sans font-normal text-[#262626] mb-14">
+      <h2 className="text-2xl sm:text-[28px] leading-[38px] font-sequel-sans font-normal text-[#262626] mb-8 sm:mb-10 md:mb-14">
         Category
       </h2>
       
-      <div className="relative w-full h-[400px]">
-        {/* Football Category */}
-        <div className="absolute left-[34px] top-0">
-          {/* Football Title Box */}
-          <div className="absolute w-[270px] h-[116px] bg-[#EBEEF3] rounded-[6px]">
-            <h2 className="absolute w-[203px] h-[75px] left-[34px] top-[20px] font-sequel-sans font-extrabold text-[37px] leading-[75px] text-center uppercase bg-gradient-to-b from-[#262626] to-[#B8C2CE] bg-clip-text text-transparent">
-              {categories[0].title}
-            </h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-4 md:gap-5">
+        {categories.map((category) => (
+          <div key={category.id} className="flex flex-col h-full">
+            {category.layout === "title-top" ? (
+              <>
+                {/* Title Box on Top */}
+                <div className="w-full h-[90px] sm:h-[100px] md:h-[116px] bg-[#EBEEF3] rounded-[6px] flex items-center justify-center mb-4">
+                  <h2 className="font-sequel-sans font-extrabold text-2xl sm:text-3xl md:text-[37px] leading-tight text-center uppercase bg-gradient-to-b from-[#262626] to-[#B8C2CE] bg-clip-text text-transparent px-2">
+                    {formatTitle(category.title)}
+                  </h2>
+                </div>
+                
+                {/* Image Below */}
+                <div className="w-full h-[200px] sm:h-[220px] md:h-[288px] overflow-hidden rounded-[6px]">
+                  <img 
+                    src={category.image} 
+                    alt={category.title} 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </>
+            ) : (
+              <>
+                {/* Image on Top */}
+                <div className={`w-full ${category.title === "TABLE TENNIS" ? 'h-[200px] sm:h-[230px] md:h-[286px] bg-[#010101]' : 'h-[180px] sm:h-[200px] md:h-[235px]'} overflow-hidden rounded-[6px] mb-4`}>
+                  <img 
+                    src={category.image} 
+                    alt={category.title} 
+                    className={`w-full h-full object-cover ${category.title === "TABLE TENNIS" ? 'object-contain' : ''}`}
+                  />
+                </div>
+                
+                {/* Title Box Below */}
+                <div className="w-full h-[120px] sm:h-[140px] md:h-[169px] bg-[#EBEEF3] rounded-[6px] flex items-center justify-center">
+                  <h2 className="font-sequel-sans font-extrabold text-2xl sm:text-3xl md:text-[37px] leading-tight text-center uppercase bg-gradient-to-b from-[#262626] to-[#B8C2CE] bg-clip-text text-transparent px-2">
+                    {formatTitle(category.title)}
+                  </h2>
+                </div>
+              </>
+            )}
           </div>
-          
-          {/* Football Image */}
-          <div className="absolute w-[270px] h-[288px] top-[130px] overflow-hidden rounded-[6px]">
-            <img 
-              src={categories[0].image} 
-              alt="Football" 
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-        
-        {/* Basketball Category */}
-        <div className="absolute left-[334px] top-0">
-          {/* Basketball Image */}
-          <div className="absolute w-[270px] h-[235px] rounded-[6px] overflow-hidden">
-            <img 
-              src={categories[1].image} 
-              alt="Basketball" 
-              className="w-full h-full object-cover"
-            />
-          </div>
-          
-          {/* Basketball Title Box */}
-          <div className="absolute w-[270px] h-[169px] top-[249px] bg-[#EBEEF3] rounded-[6px]">
-            <div className="absolute w-[210px] left-[30px] top-[45px] font-sequel-sans font-extrabold text-[37px] leading-[39px] text-center uppercase bg-gradient-to-b from-[#262626] to-[#B8C2CE] bg-clip-text text-transparent">
-              <div>BASKET</div>
-              <div>BALL</div>
-            </div>
-          </div>
-        </div>
-        
-        {/* Car Sport Category */}
-        <div className="absolute left-[634px] top-0">
-          {/* Car Sport Title Box */}
-          <div className="absolute w-[270px] h-[116px] bg-[#EBEEF3] rounded-[6px]">
-            <h2 className="absolute w-[248px] h-[39px] left-[11px] top-[38px] font-sequel-sans font-extrabold text-[37px] leading-[39px] text-center uppercase bg-gradient-to-b from-[#262626] to-[#B8C2CE] bg-clip-text text-transparent">
-              {categories[2].title}
-            </h2>
-          </div>
-          
-          {/* Car Sport Image */}
-          <div className="absolute w-[270px] h-[288px] top-[130px] overflow-hidden rounded-[6px]">
-            <img 
-              src={categories[2].image} 
-              alt="Car Sport" 
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-        
-        {/* Table Tennis Category */}
-        <div className="absolute left-[934px] top-0">
-          {/* Table Tennis Image */}
-          <div className="absolute w-[270px] h-[286px]  overflow-hidden rounded-[6px] bg-[#010101]">
-            <img 
-              src={categories[3].image} 
-              alt="Table Tennis" 
-              className="w-[270px] h-[198px] object-cover"
-            />
-          </div>
-          
-          {/* Table Tennis Title Box */}
-          <div className="absolute w-[270px] h-[118px] top-[300px] bg-[#EBEEF3] rounded-[6px]">
-            <h2 className="absolute w-[210px] h-[78px] left-[30px] top-[20px] font-sequel-sans font-extrabold text-[37px] leading-[39px] text-center uppercase bg-gradient-to-b from-[#262626] to-[#B8C2CE] bg-clip-text text-transparent">
-              {categories[3].title}
-            </h2>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );
