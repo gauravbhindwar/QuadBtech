@@ -1,4 +1,4 @@
-# Sports News Website [Click Me To Open Live Link](https://sports-blue-three.vercel.app/)
+# Sports News Website
 
 A modern, responsive sports news website built with React and TailwindCSS, based on the [Sports News Website Figma design](https://www.figma.com/community/file/1269505328883040561/sports-news-websites).
 
