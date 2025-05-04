@@ -39,7 +39,7 @@ const NewsLetter = () => {
           </div>
           
           {/* Spiral SVG background */}
-          <div className="hidden md:block absolute right-1/3 top-0 w-[312px] h-[248px] pointer-events-none">
+          <div className="hidden md:block absolute right-[95px] top-[0px] w-[312px] h-[248px] pointer-events-none md:right-[-50px] md:top-[-50px] lg:right-[-100px] lg:top-[-100px] xl:right-[-150px] xl:top-[-150px]">
             <img 
               src={spiralImg} 
               alt="Decorative spiral" 
@@ -49,11 +49,11 @@ const NewsLetter = () => {
         </div>
         
         {/* Player image container - right side for tablets and desktop */}
-        <div className="hidden sm:block sm:w-2/5 md:w-1/3 relative">
+        <div className="hidden sm:block sm:w-2/5 md:w-1/3 relative w-1/3">
           <img 
             src={playerImg} 
             alt="American football player" 
-            className="absolute inset-0 w-full h-full object-cover object-center"
+            className="absolute inset-0 w-full h-full object-center"
             style={{ objectPosition: "50% 20%" }}
           />
         </div>
